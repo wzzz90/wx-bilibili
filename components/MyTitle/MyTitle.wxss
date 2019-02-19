@@ -1,0 +1,36 @@
+.my_title {
+  display: flex;
+  align-items: center;
+  padding: 10rpx;
+  background-color: #fff;
+}
+
+.logo {
+  flex: 7;
+}
+
+.seach_icon {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user_icon {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.down_app {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background-color: pink;
+  border-radius: 10rpx;
+}
