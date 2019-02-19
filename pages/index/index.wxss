@@ -1,6 +1,6 @@
 page {
   color: #666;
-  padding-bottom: 10rpx;
+  padding: 10rpx;
 }
 
 .nav {

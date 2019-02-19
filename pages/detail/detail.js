@@ -5,14 +5,69 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    videoInfo: null,
+    othersList: [],
+    commentData: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options);
+    let videoId = options.id;
+    this.getVideoDetail(videoId);
+    this.getOtherList(videoId);
+    this.getcommentList(videoId);
+  },
 
+
+  getVideoDetail(id) {
+    const that = this;
+    wx.request({
+      url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/videoDetail?id='+id,
+      success(res) {
+        const data = res.data;
+
+        if (data.code === 0) {
+          that.setData({
+            videoInfo: data.data.videoInfo
+          })
+        }
+      }
+    })
+  },
+
+  getOtherList(id) {
+    const that = this;
+    wx.request({
+      url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/othersList?id=' + id,
+      success(res) {
+        const data = res.data;
+
+        if (data.code === 0) {
+          that.setData({
+            othersList: data.data.othersList
+          })
+        }
+      }
+    })
+  },
+
+  getcommentList(id) {
+    const that = this;
+    wx.request({
+      url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/commentsList?id=' + id,
+      success(res) {
+        const data = res.data;
+
+        if (data.code === 0) {
+          that.setData({
+            commentData: data.data.commentData
+          })
+        }
+      }
+    })
   },
 
   /**
